@@ -1,4 +1,8 @@
-// Cursor
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
+
 const cursor = document.getElementById('cursor');
 const cursorRing = document.getElementById('cursorRing');
 let mx = 0, my = 0, rx = 0, ry = 0;
@@ -13,7 +17,7 @@ function animCursor() {
   requestAnimationFrame(animCursor);
 }
 animCursor();
-document.querySelectorAll('a,button,.product-card,.testimonial-card').forEach(el => {
+document.querySelectorAll('a,button,.product-card').forEach(el => {
   el.addEventListener('mouseenter', () => {
     cursor.style.width = '20px';
     cursor.style.height = '20px';
@@ -28,20 +32,17 @@ document.querySelectorAll('a,button,.product-card,.testimonial-card').forEach(el
   });
 });
 
-// Navbar scroll
 const nav = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 60);
 });
 
-// Scroll reveal
 const reveals = document.querySelectorAll('.reveal,.reveal-left,.reveal-right');
 const revealObs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
 }, { threshold: 0.15 });
 reveals.forEach(r => revealObs.observe(r));
 
-// Counter animation
 function animateCounter(el) {
   const target = parseInt(el.dataset.target);
   let cur = 0;
@@ -62,42 +63,66 @@ const counterObs = new IntersectionObserver(entries => {
 }, { threshold: 0.5 });
 document.querySelectorAll('.counter-wrap').forEach(c => counterObs.observe(c));
 
-// Horizontal process scroll
-const track = document.getElementById('processTrack');
-const steps = track.querySelectorAll('.process-step');
-const dotsContainer = document.getElementById('scrollDots');
-let currentStep = 0;
-const stepWidth = 336;
+const searchInput = document.getElementById('searchInput');
+const searchDropdown = document.getElementById('searchDropdown');
+const productCards = document.querySelectorAll('.product-card');
+const productsSection = document.getElementById('products');
 
-steps.forEach((_, i) => {
-  const dot = document.createElement('div');
-  dot.className = 'progress-dot' + (i === 0 ? ' active' : '');
-  dot.addEventListener('click', () => goToStep(i));
-  dotsContainer.appendChild(dot);
-});
+const productNames = [
+  'Animal feeds', 'Insecticides', 'Herbicides', 'Fungicides',
+  'Dewormers', 'Seeds', 'Vet products', 'Fertilizers',
+  'Acaricides', 'Poultry equipment', 'Farm tools'
+];
 
-function goToStep(idx) {
-  currentStep = Math.max(0, Math.min(idx, steps.length - 1));
-  track.style.transform = `translateX(-${currentStep * stepWidth}px)`;
-  steps.forEach((s, i) => s.classList.toggle('active-step', i === currentStep));
-  dotsContainer.querySelectorAll('.progress-dot').forEach((d, i) => d.classList.toggle('active', i === currentStep));
+function renderDropdown(filter) {
+  const q = filter.toLowerCase();
+  const matches = productNames.filter(n => n.toLowerCase().includes(q));
+  if (!matches.length || !q) {
+    searchDropdown.classList.remove('visible');
+    return;
+  }
+  searchDropdown.innerHTML = matches.map(name =>
+    `<div class="search-dropdown-item" data-name="${name}">${name}</div>`
+  ).join('');
+  searchDropdown.classList.add('visible');
 }
 
-document.getElementById('prevBtn').addEventListener('click', () => goToStep(currentStep - 1));
-document.getElementById('nextBtn').addEventListener('click', () => goToStep(currentStep + 1));
+if (searchInput && searchDropdown && productCards.length) {
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase();
+    renderDropdown(query);
+    productCards.forEach(card => {
+      const name = card.dataset.name.toLowerCase();
+      card.style.display = name.includes(query) ? '' : 'none';
+    });
+    const productsTop = productsSection.offsetTop - 100;
+    window.scrollTo({ top: productsTop, behavior: 'smooth' });
+  });
 
-// Touch/drag swipe on process
-let dragStart = null;
-track.addEventListener('mousedown', e => { dragStart = e.clientX; });
-document.addEventListener('mouseup', e => {
-  if (dragStart !== null) {
-    const diff = dragStart - e.clientX;
-    if (Math.abs(diff) > 50) goToStep(currentStep + (diff > 0 ? 1 : -1));
-    dragStart = null;
-  }
-});
+  searchDropdown.addEventListener('click', function(e) {
+    const item = e.target.closest('.search-dropdown-item');
+    if (!item) return;
+    const name = item.dataset.name;
+    searchInput.value = name;
+    searchDropdown.classList.remove('visible');
+    productCards.forEach(card => {
+      card.style.display = card.dataset.name.toLowerCase() === name.toLowerCase() ? '' : 'none';
+    });
+    const productsTop = productsSection.offsetTop - 100;
+    window.scrollTo({ top: productsTop, behavior: 'smooth' });
+  });
 
-// Parallax hero orbs on scroll
+  document.addEventListener('click', function(e) {
+    if (!searchInput.contains(e.target) && !searchDropdown.contains(e.target)) {
+      searchDropdown.classList.remove('visible');
+    }
+  });
+
+  searchInput.addEventListener('focus', function() {
+    if (this.value.trim()) renderDropdown(this.value);
+  });
+}
+
 window.addEventListener('scroll', () => {
   const y = window.scrollY;
   document.querySelectorAll('.hero-orb').forEach((orb, i) => {
@@ -105,7 +130,6 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// Smooth stats reveal with stagger
 const statsObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
