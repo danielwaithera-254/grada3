@@ -560,13 +560,7 @@ section { padding: 8rem 4rem; max-width: 1400px; margin: 0 auto; }
   font-size: 0.8rem;
   padding: 0.35rem 0.85rem;
 }
-.product-card-expanded .brand-tag img {
-  width: 60px;
-  height: 30px;
-  object-fit: contain;
-  margin-right: 0.3rem;
-  vertical-align: middle;
-}
+
 
 /* CONTACT */
 #contact {

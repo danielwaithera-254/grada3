@@ -70,7 +70,7 @@ const productsSection = document.getElementById('products');
 
 const productNames = [
   'Animal feeds', 'Insecticides', 'Herbicides', 'Fungicides',
-  'Dewormers', 'Seeds', 'Vet products', 'Fertilizers',
+  'Dewormers', 'Seeds (maize, beans, vegetables)', 'Vet products', 'Fertilizers',
   'Acaricides', 'Poultry equipment', 'Farm tools'
 ];
 
