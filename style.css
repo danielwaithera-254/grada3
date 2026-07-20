@@ -170,7 +170,7 @@ nav.scrolled {
 
 /* HERO */
 #hero {
-  min-height: 100vh;
+  min-height: 70vh;
   position: relative;
   display: flex; align-items: center;
   overflow: hidden;
@@ -224,7 +224,7 @@ nav.scrolled {
   width: 100%;
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 4rem; align-items: center;
-  padding-top: 100px;
+  padding-top: 80px;
 }
 .hero-tag {
   display: inline-flex; align-items: center; gap: 8px;
@@ -907,7 +907,7 @@ body::before {
   .search-input { width: 100%; }
   .search-input:focus { width: 100%; }
   .search-dropdown { right: auto; left: 0; width: 100%; }
-  .hero-content { grid-template-columns: 1fr; padding: 0 1.5rem; padding-top: 100px; }
+  .hero-content { grid-template-columns: 1fr; padding: 0 1.5rem; padding-top: 80px; }
   .hero-visual { display: none; }
   section { padding: 4rem 1.5rem; }
   .products-grid { grid-template-columns: 1fr; }
