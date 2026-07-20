@@ -532,6 +532,50 @@ section { padding: 8rem 4rem; max-width: 1400px; margin: 0 auto; }
   color: var(--g5);
   font-weight: 500;
   letter-spacing: 0.03em;
+  cursor: pointer !important;
+  transition: all 0.3s;
+  user-select: none;
+}
+.brand-tag:hover {
+  background: rgba(45, 181, 74, 0.2);
+  border-color: var(--g4);
+}
+.brand-tag.active {
+  background: rgba(45, 181, 74, 0.3);
+  border-color: var(--g4);
+  box-shadow: 0 0 12px rgba(45, 181, 74, 0.3);
+}
+.brand-image-container {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s ease, opacity 0.45s ease, margin 0.45s ease;
+  opacity: 0;
+  margin-top: 0;
+}
+.brand-image-container.visible {
+  max-height: 300px;
+  opacity: 1;
+  margin-top: 0.75rem;
+}
+.brand-image-container img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid rgba(45, 181, 74, 0.2);
+  background: rgba(10, 46, 10, 0.4);
+}
+.brand-image-placeholder {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  border: 1px dashed rgba(45, 181, 74, 0.3);
+  background: rgba(10, 46, 10, 0.4);
+  color: rgba(245, 240, 232, 0.4);
+  font-size: 1rem;
 }
 
 /* EXPANDED ANIMAL FEEDS CARD */

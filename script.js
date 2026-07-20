@@ -130,6 +130,55 @@ window.addEventListener('scroll', () => {
   });
 });
 
+/* ── Brand image toggle ── */
+const brandImages = {
+  'Duduthrin': 'https://imaginecare.co.ke/wp-content/uploads/2025/09/Duduthrin-1.75EC-1.jpg',
+  'Roundup': 'https://imaginecare.co.ke/wp-content/uploads/2019/08/roundup-360k.jpeg',
+  'Bestox': 'https://imaginecare.co.ke/wp-content/uploads/2020/09/bestox-100-ec.jpg',
+  'DAP': 'https://imaginecare.co.ke/wp-content/uploads/2023/08/Thabiti-DAP-Fertilizer-50kg.jpg',
+  'Triatix': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
+  'Ridomil': 'https://imaginecare.co.ke/wp-content/uploads/2021/08/Ridomil-1kg-F.jpg',
+  'Ranger': 'https://imaginecare.co.ke/wp-content/uploads/2019/08/roundup-360k.jpeg',
+  'Lorsban': 'https://imaginecare.co.ke/wp-content/uploads/2020/09/bestox-100-ec.jpg',
+  'Polo': 'https://imaginecare.co.ke/wp-content/uploads/2020/09/bestox-100-ec.jpg',
+  'Thunder': 'https://imaginecare.co.ke/wp-content/uploads/2020/09/bestox-100-ec.jpg',
+  'Albendazole': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
+  'Ivermectin': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
+  'Deltamethrin': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
+};
+
+document.querySelectorAll('.brand-tag').forEach(tag => {
+  tag.addEventListener('click', function(e) {
+    e.stopPropagation();
+    const card = this.closest('.product-card');
+    const brandName = this.textContent.trim();
+    let container = card.querySelector('.brand-image-container');
+
+    // Toggle if already exists
+    if (container) {
+      container.classList.toggle('visible');
+      this.classList.toggle('active');
+      return;
+    }
+
+    // Create brand image container
+    container = document.createElement('div');
+    container.className = 'brand-image-container';
+
+    const imgUrl = brandImages[brandName];
+    if (imgUrl) {
+      container.innerHTML = `<img src="${imgUrl}" alt="${brandName}" loading="lazy">`;
+    } else {
+      container.innerHTML = `<div class="brand-image-placeholder">📷 ${brandName}</div>`;
+    }
+
+    card.querySelector('.product-card-body').appendChild(container);
+    this.classList.add('active');
+
+    requestAnimationFrame(() => { container.classList.add('visible'); });
+  });
+});
+
 const statsObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
