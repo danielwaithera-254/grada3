@@ -69,9 +69,8 @@ const productCards = document.querySelectorAll('.product-card');
 const productsSection = document.getElementById('products');
 
 const productNames = [
-  'Animal feeds', 'Insecticides', 'Herbicides', 'Fungicides',
-  'Dewormers', 'Seeds (maize, beans, vegetables)', 'Vet products', 'Fertilizers',
-  'Acaricides', 'Poultry equipment', 'Farm tools'
+  'Poultry feeds', 'Dairy and cattle feeds', 'Pig feeds', 'Rabbit feeds', 'Fish feeds', 'Goat and sheep feeds',
+  'Herbicides', 'Insecticides', 'Fungicides', 'Dewormers', 'Vet products', 'Fertilizers', 'Seeds'
 ];
 
 function renderDropdown(filter) {
