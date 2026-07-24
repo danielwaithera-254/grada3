@@ -131,89 +131,129 @@ window.addEventListener('scroll', () => {
 
 /* ── Brand image toggle ── */
 const brandImages = {
-  /* Animal Feeds */
-  'Portland Feeds': 'https://imaginecare.co.ke/wp-content/uploads/2023/09/DK-777-Hybrid-Maize-Seeds-2kg.jpg',
-  'Unga Farm Care': 'https://imaginecare.co.ke/wp-content/uploads/2023/09/DK-777-Hybrid-Maize-Seeds-2kg.jpg',
-  'Mills & Co': 'https://imaginecare.co.ke/wp-content/uploads/2023/09/DK-777-Hybrid-Maize-Seeds-2kg.jpg',
-  'Dairy Meal': 'https://imaginecare.co.ke/wp-content/uploads/2023/09/DK-777-Hybrid-Maize-Seeds-2kg.jpg',
-  'Chick Mash': 'https://imaginecare.co.ke/wp-content/uploads/2023/09/DK-777-Hybrid-Maize-Seeds-2kg.jpg',
-  'Beef Concentrates': 'https://imaginecare.co.ke/wp-content/uploads/2023/09/DK-777-Hybrid-Maize-Seeds-2kg.jpg',
-  'Pig Grower': 'https://imaginecare.co.ke/wp-content/uploads/2023/09/DK-777-Hybrid-Maize-Seeds-2kg.jpg',
-  'Layers Mash': 'https://imaginecare.co.ke/wp-content/uploads/2023/09/DK-777-Hybrid-Maize-Seeds-2kg.jpg',
+  /* Poultry Feeds */
+  'Chick Mash': 'https://images.unsplash.com/photo-1599058917765-a780eda07a3e?w=400&h=300&fit=crop',
+  'Growers Mash': 'https://images.unsplash.com/photo-1599058917765-a780eda07a3e?w=400&h=300&fit=crop',
+  'Layers Mash': 'https://images.unsplash.com/photo-1599058917765-a780eda07a3e?w=400&h=300&fit=crop',
+  'Broiler Starter': 'https://images.unsplash.com/photo-1599058917765-a780eda07a3e?w=400&h=300&fit=crop',
+  'Broiler Finisher': 'https://images.unsplash.com/photo-1599058917765-a780eda07a3e?w=400&h=300&fit=crop',
+  'Kienyeji Mash': 'https://images.unsplash.com/photo-1599058917765-a780eda07a3e?w=400&h=300&fit=crop',
 
-  /* Insecticides */
-  'Duduthrin': 'https://imaginecare.co.ke/wp-content/uploads/2025/09/Duduthrin-1.75EC-1.jpg',
-  'Ranger': 'https://imaginecare.co.ke/wp-content/uploads/2022/10/Pentagon-50-EC.png',
-  'Bestox': 'https://imaginecare.co.ke/wp-content/uploads/2020/09/bestox-100-ec.jpg',
-  'Lorsban': 'https://imaginecare.co.ke/wp-content/uploads/2023/01/Alpha-Degree-100EC.jpg',
-  'Thunder': 'https://imaginecare.co.ke/wp-content/uploads/2024/01/122063637_2839209483030619_4842580950794913864_n.jpg',
-  'Polo': 'https://imaginecare.co.ke/wp-content/uploads/2022/10/Pentagon-50-EC.png',
+  /* Dairy & Cattle Feeds */
+  'Dairy Meal': 'https://images.unsplash.com/photo-1585515320310-259814833e62?w=400&h=300&fit=crop',
+  'Calf Pellets': 'https://images.unsplash.com/photo-1585515320310-259814833e62?w=400&h=300&fit=crop',
+  'Beef Fattening Meal': 'https://images.unsplash.com/photo-1585515320310-259814833e62?w=400&h=300&fit=crop',
+  'Mineral Licks': 'https://images.unsplash.com/photo-1585515320310-259814833e62?w=400&h=300&fit=crop',
+
+  /* Pig Feeds */
+  'Pig Creep Feed': 'https://images.unsplash.com/photo-1560493676-04071c5f467b?w=400&h=300&fit=crop',
+  'Pig Starter': 'https://images.unsplash.com/photo-1560493676-04071c5f467b?w=400&h=300&fit=crop',
+  'Pig Grower': 'https://images.unsplash.com/photo-1560493676-04071c5f467b?w=400&h=300&fit=crop',
+  'Pig Finisher': 'https://images.unsplash.com/photo-1560493676-04071c5f467b?w=400&h=300&fit=crop',
+  'Sow & Weaner Meal': 'https://images.unsplash.com/photo-1560493676-04071c5f467b?w=400&h=300&fit=crop',
+
+  /* Rabbit Feeds */
+  'Rabbit Pellets': 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400&h=300&fit=crop',
+
+  /* Fish Feeds */
+  'Tilapia Feed': 'https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=400&h=300&fit=crop',
+  'Catfish Feed': 'https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=400&h=300&fit=crop',
+  'Fish Starter, Grower, and Finisher Pellets': 'https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=400&h=300&fit=crop',
+
+  /* Goat & Sheep Feeds */
+  'Goat Meal': 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=400&h=300&fit=crop',
+  'Sheep Meal': 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=400&h=300&fit=crop',
+  'Mineral Supplements': 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=400&h=300&fit=crop',
 
   /* Herbicides */
-  'Roundup': 'https://imaginecare.co.ke/wp-content/uploads/2019/08/roundup-360k.jpeg',
-  'Starane': 'https://imaginecare.co.ke/wp-content/uploads/2019/08/roundup-360k.jpeg',
-  '2,4-D Amine': 'https://imaginecare.co.ke/wp-content/uploads/2019/08/roundup-360k.jpeg',
+  'Agromine 860 SL (2,4-D Amine)': 'https://imaginecare.co.ke/wp-content/uploads/2019/08/roundup-360k.jpeg',
+  '2,4-D Max': 'https://imaginecare.co.ke/wp-content/uploads/2019/08/roundup-360k.jpeg',
+  'Lumax': 'https://imaginecare.co.ke/wp-content/uploads/2021/05/60964861_2392119141072991_6061613135846965248_n.jpg',
   'Atrazine': 'https://imaginecare.co.ke/wp-content/uploads/2019/08/roundup-360k.jpeg',
-  'Glyphosate': 'https://imaginecare.co.ke/wp-content/uploads/2019/08/roundup-360k.jpeg',
-  'Weedmaster': 'https://imaginecare.co.ke/wp-content/uploads/2019/08/roundup-360k.jpeg',
+  'Agil 100 EC': 'https://imaginecare.co.ke/wp-content/uploads/2019/08/roundup-360k.jpeg',
+  'Bentagran': 'https://imaginecare.co.ke/wp-content/uploads/2019/08/roundup-360k.jpeg',
+  'Dual Gold': 'https://agroduka.com/images/product/lumax-5375_5l.png',
+  'Stomp 330 EC': 'https://imaginecare.co.ke/wp-content/uploads/2019/08/roundup-360k.jpeg',
+  'Gardoprim Plus Gold': 'https://imaginecare.co.ke/wp-content/uploads/2019/08/roundup-360k.jpeg',
+  'Harness': 'https://imaginecare.co.ke/wp-content/uploads/2019/08/roundup-360k.jpeg',
+  'Banvel (Dicamba)': 'https://imaginecare.co.ke/wp-content/uploads/2019/08/roundup-360k.jpeg',
+  'Mustang': 'https://imaginecare.co.ke/wp-content/uploads/2019/08/roundup-360k.jpeg',
+  'Callisto': 'https://imaginecare.co.ke/wp-content/uploads/2019/08/roundup-360k.jpeg',
+  'Basagran': 'https://imaginecare.co.ke/wp-content/uploads/2019/08/roundup-360k.jpeg',
+
+  /* Insecticides */
+  'Thunder 145 O-TEQ': 'https://imaginecare.co.ke/wp-content/uploads/2024/01/122063637_2839209483030619_4842580950794913864_n.jpg',
+  'Karate 5 EC': 'https://agriplexindia.com/cdn/shop/products/syngenta-04.png?v=1743241972',
+  'Karate Zeon 5 CS': 'https://agriplexindia.com/cdn/shop/products/syngenta-04.png?v=1743241972',
+  'Actara 25 WG': 'https://imaginecare.co.ke/wp-content/uploads/2022/11/Actara-40g-Actara-25-WG.jpg',
+  'Ampligo 150 ZC': 'https://imaginecare.co.ke/wp-content/uploads/2021/06/1.1579080806.Insecticides.jpg',
+  'Voliam Targo 063 SC': 'https://imaginecare.co.ke/wp-content/uploads/2023/01/Alpha-Degree-100EC.jpg',
+  'Match 050 EC': 'https://imaginecare.co.ke/wp-content/uploads/2021/06/1.1579080806.Insecticides.jpg',
+  'Cruiser 350 FS': 'https://imaginecare.co.ke/wp-content/uploads/2020/09/bestox-100-ec.jpg',
+  'Engeo 247 SC': 'https://imaginecare.co.ke/wp-content/uploads/2022/10/Pentagon-50-EC.png',
+  'Minecto Star': 'https://imaginecare.co.ke/wp-content/uploads/2020/09/bestox-100-ec.jpg',
+  'Minecto One': 'https://imaginecare.co.ke/wp-content/uploads/2020/09/bestox-100-ec.jpg',
+  'Vertimec 018 EC': 'https://imaginecare.co.ke/wp-content/uploads/2020/09/bestox-100-ec.jpg',
+  'Proclaim 5 SG': 'https://imaginecare.co.ke/wp-content/uploads/2020/09/bestox-100-ec.jpg',
+  'Tracer 480 SC': 'https://imaginecare.co.ke/wp-content/uploads/2020/09/bestox-100-ec.jpg',
+  'Delegate 250 WG': 'https://imaginecare.co.ke/wp-content/uploads/2020/09/bestox-100-ec.jpg',
 
   /* Fungicides */
-  'Amistar Top': 'https://cdn-ilefbpj.nitrocdn.com/nVUkTODffJPXDBXDLfosjwmcdJniVxsG/assets/images/optimized/rev-ac7b818/kilimokona.co.ke/wp-content/uploads/2026/03/Amistar-Top.png.png',
-  'Mancozeb': 'https://imaginecare.co.ke/wp-content/uploads/2021/08/Ridomil-1kg-F.jpg',
-  'Ridomil': 'https://imaginecare.co.ke/wp-content/uploads/2021/08/Ridomil-1kg-F.jpg',
-  'Cosavet': 'https://imaginecare.co.ke/wp-content/uploads/2021/08/Ridomil-1kg-F.jpg',
-  'Mildex': 'https://imaginecare.co.ke/wp-content/uploads/2021/08/Ridomil-1kg-F.jpg',
+  'Ridomil Gold MZ 68 WG': 'https://imaginecare.co.ke/wp-content/uploads/2021/08/Ridomil-1kg-F.jpg',
+  'Mancozeb 80 WP': 'https://imaginecare.co.ke/wp-content/uploads/2021/08/Ridomil-1kg-F.jpg',
+  'Ortiva 250 SC': 'https://imaginecare.co.ke/wp-content/uploads/2023/07/Ortiva-250SC-20ml-1.png',
+  'Nativo 300 SC': 'https://imaginecare.co.ke/wp-content/uploads/2021/08/Ridomil-1kg-F.jpg',
+  'Score 250 EC': 'https://imaginecare.co.ke/wp-content/uploads/2021/08/Ridomil-1kg-F.jpg',
+  'Milraz 76 WP': 'https://imaginecare.co.ke/wp-content/uploads/2021/08/Ridomil-1kg-F.jpg',
+  'Cabrio Top 60 WG': 'https://imaginecare.co.ke/wp-content/uploads/2021/08/Ridomil-1kg-F.jpg',
+  'Amistar Top 325 SC': 'https://cdn-ilefbpj.nitrocdn.com/nVUkTODffJPXDBXDLfosjwmcdJniVxsG/assets/images/optimized/rev-ac7b818/kilimokona.co.ke/wp-content/uploads/2026/03/Amistar-Top.png.png',
+  'Melody Duo 66.8 WP': 'https://imaginecare.co.ke/wp-content/uploads/2021/08/Ridomil-1kg-F.jpg',
+  'Folicur 250 EW': 'https://imaginecare.co.ke/wp-content/uploads/2021/08/Ridomil-1kg-F.jpg',
 
   /* Dewormers */
   'Albendazole': 'https://www.epharmacyke.com/wp-content/uploads/2020/04/abz-albendazole-400mg-kenya-deworming.jpg',
-  'Ivermectin': 'https://vetmeds.org/wp-content/uploads/2020/03/IMG_0158-e1495029994588.jpg',
-  'Levamisole': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
   'Fenbendazole': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
-  'Wormicid': 'https://uzapal.co.ke/wp-content/uploads/2025/03/wormicid-liquid-125ml.jpg',
-
-  /* Seeds */
-  'Hybrid Maize H614': 'https://imaginecare.co.ke/wp-content/uploads/2026/03/H-614D-Maize-Hybrid-Seed-2kg.png',
-  'Hybrid Maize H621': 'https://imaginecare.co.ke/wp-content/uploads/2026/03/H-614D-Maize-Hybrid-Seed-2kg.png',
-  'Rosecoco Beans': 'https://imaginecare.co.ke/wp-content/uploads/2026/03/GLP-2-Rose-Coco-Beans-Seeds-2kg.png',
-  'Kales': 'https://imaginecare.co.ke/wp-content/uploads/2023/01/SC-Sungura-301-Hybrid-Maize-Seed-2kg.jpg',
-  'Tomato': 'https://imaginecare.co.ke/wp-content/uploads/2024/01/122063637_2839209483030619_4842580950794913864_n.jpg',
-  'Onion': 'https://imaginecare.co.ke/wp-content/uploads/2024/01/122063637_2839209483030619_4842580950794913864_n.jpg',
-  'Sukuma Wiki': 'https://imaginecare.co.ke/wp-content/uploads/2023/01/SC-Sungura-301-Hybrid-Maize-Seed-2kg.jpg',
-  'Spinach': 'https://imaginecare.co.ke/wp-content/uploads/2023/01/SC-Sungura-301-Hybrid-Maize-Seed-2kg.jpg',
+  'Levamisole': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
+  'Ivermectin': 'https://vetmeds.org/wp-content/uploads/2020/03/IMG_0158-e1495029994588.jpg',
+  'Closantel': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
+  'Oxyclozanide': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
+  'Triclabendazole': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
+  'Rafoxanide': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
+  'Piperazine': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
+  'Praziquantel': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
 
   /* Vet Products */
-  'Vaccines': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
-  'Antibiotics': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
-  'Multivitamins': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
-  'Wound Sprays': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
-  'Trypanocides': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
+  'Oxytetracycline Injection': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
+  'Pen & Strep Injection': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
+  'Tylosin Injection': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
+  'Ivermectin Injection': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
+  'Albendazole Suspension': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
+  'Multivitamin Injection': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
+  'Calcium Borogluconate Injection': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
+  'Coccidiostat (Amprolium)': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
+  'Tick Grease': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
+  'Terramycin Eye Ointment': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
 
   /* Fertilizers */
+  'DAP (Diammonium Phosphate)': 'https://imaginecare.co.ke/wp-content/uploads/2023/08/Thabiti-DAP-Fertilizer-50kg.jpg',
+  'CAN (Calcium Ammonium Nitrate)': 'https://imaginecare.co.ke/wp-content/uploads/2023/08/Thabiti-DAP-Fertilizer-50kg.jpg',
   'NPK 23:23:0': 'https://imaginecare.co.ke/wp-content/uploads/2023/08/Thabiti-DAP-Fertilizer-50kg.jpg',
-  'DAP': 'https://imaginecare.co.ke/wp-content/uploads/2023/08/Thabiti-DAP-Fertilizer-50kg.jpg',
-  'CAN': 'https://imaginecare.co.ke/wp-content/uploads/2023/08/Thabiti-DAP-Fertilizer-50kg.jpg',
-  'Urea': 'https://imaginecare.co.ke/wp-content/uploads/2023/08/Thabiti-DAP-Fertilizer-50kg.jpg',
-  'Mavuno': 'https://imaginecare.co.ke/wp-content/uploads/2023/08/Thabiti-DAP-Fertilizer-50kg.jpg',
-  'Organic Compost': 'https://imaginecare.co.ke/wp-content/uploads/2023/08/Thabiti-DAP-Fertilizer-50kg.jpg',
+  'NPK 17:17:17': 'https://imaginecare.co.ke/wp-content/uploads/2023/08/Thabiti-DAP-Fertilizer-50kg.jpg',
+  'NPK 20:10:10': 'https://imaginecare.co.ke/wp-content/uploads/2023/08/Thabiti-DAP-Fertilizer-50kg.jpg',
+  'Urea (46% Nitrogen)': 'https://imaginecare.co.ke/wp-content/uploads/2023/08/Thabiti-DAP-Fertilizer-50kg.jpg',
+  'Sulphate of Ammonia (SA)': 'https://imaginecare.co.ke/wp-content/uploads/2023/08/Thabiti-DAP-Fertilizer-50kg.jpg',
+  'MOP (Muriate of Potash)': 'https://imaginecare.co.ke/wp-content/uploads/2023/08/Thabiti-DAP-Fertilizer-50kg.jpg',
+  'SSP (Single Super Phosphate)': 'https://imaginecare.co.ke/wp-content/uploads/2023/08/Thabiti-DAP-Fertilizer-50kg.jpg',
+  'Foliar Fertilizer (e.g. Bayfolan or Easy Gro)': 'https://imaginecare.co.ke/wp-content/uploads/2023/08/Thabiti-DAP-Fertilizer-50kg.jpg',
 
-  /* Acaricides */
-  'Triatix': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
-  'Deltamethrin': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
-  'Ectomort': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
-  'Supacide': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
-
-  /* Poultry Equipment */
-  'Drinkers': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
-  'Feeders': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
-  'Brooders': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
-  'Cages': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
-
-  /* Farm Tools */
-  'Jembe': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
-  'Panga': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
-  'Fork': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
-  'Sprayer': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
-  'Wheelbarrow': 'https://imaginecare.co.ke/wp-content/uploads/2023/04/Triatix-Stock-Spray.jpg',
+  /* Seeds */
+  'Maize Seeds': 'https://imaginecare.co.ke/wp-content/uploads/2026/03/H-614D-Maize-Hybrid-Seed-2kg.png',
+  'Bean Seeds': 'https://imaginecare.co.ke/wp-content/uploads/2026/03/GLP-2-Rose-Coco-Beans-Seeds-2kg.png',
+  'Tomato Seeds': 'https://imaginecare.co.ke/wp-content/uploads/2024/01/122063637_2839209483030619_4842580950794913864_n.jpg',
+  'Onion Seeds': 'https://imaginecare.co.ke/wp-content/uploads/2024/01/122063637_2839209483030619_4842580950794913864_n.jpg',
+  'Cabbage Seeds': 'https://imaginecare.co.ke/wp-content/uploads/2023/01/SC-Sungura-301-Hybrid-Maize-Seed-2kg.jpg',
+  'Kale (Sukuma Wiki) Seeds': 'https://imaginecare.co.ke/wp-content/uploads/2023/01/SC-Sungura-301-Hybrid-Maize-Seed-2kg.jpg',
+  'Spinach Seeds': 'https://imaginecare.co.ke/wp-content/uploads/2023/01/SC-Sungura-301-Hybrid-Maize-Seed-2kg.jpg',
 };
 
 document.querySelectorAll('.brand-tag').forEach(tag => {
