@@ -68,20 +68,36 @@ const searchDropdown = document.getElementById('searchDropdown');
 const productCards = document.querySelectorAll('.product-card');
 const productsSection = document.getElementById('products');
 
-const productNames = [
-  'Poultry feeds', 'Dairy and cattle feeds', 'Pig feeds', 'Rabbit feeds', 'Fish feeds', 'Goat and sheep feeds',
-  'Herbicides', 'Insecticides', 'Fungicides', 'Dewormers', 'Vet products', 'Fertilizers', 'Seeds'
-];
+function getAllProducts() {
+  const items = [];
+  productCards.forEach(card => {
+    const catName = card.dataset.name;
+    items.push({ name: catName, cat: catName, card: card });
+    card.querySelectorAll('.brand-tag').forEach(tag => {
+      items.push({ name: tag.textContent.trim(), cat: catName, card: card, tag: tag });
+    });
+  });
+  return items;
+}
+
+const productCatalog = getAllProducts();
 
 function renderDropdown(filter) {
   const q = filter.toLowerCase();
-  const matches = productNames.filter(n => n.toLowerCase().includes(q));
+  const matches = productCatalog.filter(p => p.name.toLowerCase().includes(q));
   if (!matches.length || !q) {
     searchDropdown.classList.remove('visible');
     return;
   }
-  searchDropdown.innerHTML = matches.map(name =>
-    `<div class="search-dropdown-item" data-name="${name}">${name}</div>`
+  const seen = new Set();
+  const deduped = matches.filter(p => {
+    const key = p.name.toLowerCase();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+  searchDropdown.innerHTML = deduped.map(p =>
+    `<div class="search-dropdown-item" data-name="${p.name}" data-cat="${p.cat}">${p.name} <span style="opacity:0.4;font-size:0.7em">— ${p.cat}</span></div>`
   ).join('');
   searchDropdown.classList.add('visible');
 }
@@ -91,22 +107,33 @@ if (searchInput && searchDropdown && productCards.length) {
     const query = this.value.toLowerCase();
     renderDropdown(query);
     productCards.forEach(card => {
-      const name = card.dataset.name.toLowerCase();
-      card.style.display = name.includes(query) ? '' : 'none';
+      const cat = card.dataset.name.toLowerCase();
+      const brands = [];
+      card.querySelectorAll('.brand-tag').forEach(t => brands.push(t.textContent.trim().toLowerCase()));
+      const match = cat.includes(query) || brands.some(b => b.includes(query));
+      card.style.display = (query && match) ? '' : 'none';
     });
-    const productsTop = productsSection.offsetTop - 100;
-    window.scrollTo({ top: productsTop, behavior: 'smooth' });
+    if (query) {
+      const productsTop = productsSection.offsetTop - 100;
+      window.scrollTo({ top: productsTop, behavior: 'smooth' });
+    }
   });
 
   searchDropdown.addEventListener('click', function(e) {
     const item = e.target.closest('.search-dropdown-item');
     if (!item) return;
     const name = item.dataset.name;
+    const cat = item.dataset.cat;
     searchInput.value = name;
     searchDropdown.classList.remove('visible');
     productCards.forEach(card => {
-      card.style.display = card.dataset.name.toLowerCase() === name.toLowerCase() ? '' : 'none';
+      const cName = card.dataset.name;
+      card.style.display = cName === cat ? '' : 'none';
     });
+    const targetCard = productCatalog.find(p => p.name === name);
+    if (targetCard && targetCard.tag) {
+      targetCard.tag.click();
+    }
     const productsTop = productsSection.offsetTop - 100;
     window.scrollTo({ top: productsTop, behavior: 'smooth' });
   });
