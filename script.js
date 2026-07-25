@@ -197,7 +197,7 @@ const brandImages = {
   '2,4-D Max': 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=300&fit=crop',
   'Lumax': 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=300&fit=crop',
   'Atrazine': 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=300&fit=crop',
-  'Agil 100 EC': 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=300&fit=crop',
+  'Agil 100 EC': 'https://agroduka.ke/images/thumbnails/600/600/detailed/8/Agil-Kenya_tcm141-75934.png',
   'Bentagran': 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=300&fit=crop',
   'Dual Gold': 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=300&fit=crop',
   'Stomp 330 EC': 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=300&fit=crop',
@@ -209,7 +209,7 @@ const brandImages = {
   'Basagran': 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=300&fit=crop',
 
   /* Insecticides */
-  'Thunder 145 O-TEQ': 'https://images.unsplash.com/photo-1628359355624-855775b5c9c4?w=400&h=300&fit=crop',
+  'Thunder 145 O-TEQ': 'https://ke.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/51/1140823/1.jpg?9030',
   'Karate 5 EC': 'https://images.unsplash.com/photo-1628359355624-855775b5c9c4?w=400&h=300&fit=crop',
   'Karate Zeon 5 CS': 'https://images.unsplash.com/photo-1628359355624-855775b5c9c4?w=400&h=300&fit=crop',
   'Actara 25 WG': 'https://images.unsplash.com/photo-1628359355624-855775b5c9c4?w=400&h=300&fit=crop',
@@ -226,7 +226,7 @@ const brandImages = {
   'Delegate 250 WG': 'https://images.unsplash.com/photo-1628359355624-855775b5c9c4?w=400&h=300&fit=crop',
 
   /* Fungicides */
-  'Ridomil Gold MZ 68 WG': 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400&h=300&fit=crop',
+  'Ridomil Gold MZ 68 WG': 'https://ke.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/03/5147431/1.jpg?5631',
   'Mancozeb 80 WP': 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400&h=300&fit=crop',
   'Ortiva 250 SC': 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400&h=300&fit=crop',
   'Nativo 300 SC': 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400&h=300&fit=crop',
