@@ -589,6 +589,25 @@ section { padding: 8rem 4rem; max-width: 1400px; margin: 0 auto; }
   transform: translateY(-2px);
   opacity: 0.9;
 }
+.map-embed {
+  margin-top: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  text-align: center;
+}
+.map-embed .section-label {
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--g5), var(--g4));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.nav-icon {
+  width: 14px;
+  height: 14px;
+  vertical-align: -2px;
+  margin-right: 5px;
+}
 
 /* HORIZONTAL SCROLL SECTION */
 #process {
